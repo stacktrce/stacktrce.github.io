@@ -1,0 +1,587 @@
+/* CSS Reset  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none; /* Hide default cursor */
+}
+
+
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary-color: #64748b;
+    --accent-color: #0ea5e9;
+    --background-color: #0f172a;
+    --surface-color: #1e293b;
+    --surface-light: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-color: #475569;
+    --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Typography */
+body {
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, 
+        #0f172a 0%, 
+        #1e293b 25%, 
+        #334155 50%, 
+        #475569 75%, 
+        #64748b 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding-top: 120px;
+}
+
+/* Container readablityly */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header Style */
+header {
+    background: linear-gradient(135deg, 
+        rgba(15, 23, 42, 0.95) 0%,
+        rgba(30, 41, 59, 0.9) 30%,
+        rgba(51, 65, 85, 0.85) 70%,
+        rgba(71, 85, 105, 0.8) 100%);
+    background-size: 300% 300%;
+    animation: headerGradient 12s ease-in-out infinite;
+    backdrop-filter: blur(25px);
+    border: none;
+    border-bottom: 10px solid rgba(148, 163, 184, 0.2);
+    border: 10px solid rgba(148, 163, 184, 0.2);
+    border-radius: 5px;
+    padding: 3rem 0;
+    text-align: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+    will-change: transform;
+    margin: auto 
+    
+}
+
+header.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.1), 
+        transparent);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes headerGradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+header h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    background: linear-gradient(45deg, 
+        #60a5fa 0%, 
+        #a78bfa 25%, 
+        #34d399 50%, 
+        #fbbf24 75%, 
+        #f472b6 100%);
+    background-size: 300% 300%;
+    animation: textGradient 8s ease infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 2;
+    margin: auto;
+}
+
+@keyframes textGradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+header p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.5s forwards;
+}
+
+/* Section Styles */
+section {
+    margin: 4rem auto;
+    padding: 3rem;
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    max-width: 1200px;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: var(--primary-color);
+}
+
+/* Headings */
+h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+section:hover h2::after {
+    transform: scaleX(1);
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin: 2rem 0 1rem 0;
+    display: flex;
+    align-items: center;
+}
+
+h3::before {
+    content: '▶';
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+    font-size: 0.8em;
+}
+
+/* Paragraphs und Text */
+p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+/* Listen */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: rgba(51, 65, 85, 0.5);
+    margin: 1rem 0;
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+    transition: var(--transition);
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+li:hover {
+    background: rgba(51, 65, 85, 0.8);
+    transform: translateX(10px);
+    border-left-color: var(--accent-color);
+}
+
+li:hover::before {
+    transform: translateX(100%);
+}
+
+/* Spezielle Styles für About Me Section */
+#aboutme p {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+#aboutme li {
+    margin: 0.5rem 0;
+    border-left-width: 3px;
+}
+
+/* Skills Section */
+#skills ul {
+    display: grid;
+    gap: 0;
+}
+
+#skills li {
+    border-left-width: 4px;
+    font-weight: 500;
+}
+
+/* Projekte Section */
+#projekte {
+    background: rgba(30, 41, 59, 0.7);
+}
+
+#projekte li {
+    border-left-color: var(--accent-color);
+    padding: 2rem 1.5rem;
+    margin: 1.5rem 0;
+    background: rgba(71, 85, 105, 0.3);
+}
+
+/* Links */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: var(--transition);
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+a:hover::after {
+    transform: scaleX(1);
+    background: var(--primary-color);
+}
+
+/* Kontakt Section */
+#contact {
+    background: var(--gradient);
+    color: var(--text-primary);
+    text-align: center;
+}
+
+#contact h2 {
+    color: white;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#contact a {
+    color: white;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#contact a:hover {
+    color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background: var(--surface-color);
+    color: var(--text-muted);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    section {
+        padding: 2rem 1.5rem;
+        margin: 2rem auto;
+    }
+    
+    header {
+        padding: 1.5rem 0;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header p {
+        font-size: 1.1rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+    }
+    
+    li {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    li:hover {
+        transform: translateX(5px);
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 1.5rem 1rem;
+        margin: 1.5rem auto;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    p, li {
+        font-size: 0.95rem;
+    }
+}
+
+/* Animationen */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-10px) rotate(120deg);
+    }
+    66% {
+        transform: translateY(5px) rotate(240deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(360deg);
+    }
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Custom Cursor */
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(45deg, #60a5fa, #a78bfa);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease;
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+}
+
+.cursor-dot {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transition: transform 0.05s ease;
+}
+
+.cursor-trail {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: rgba(96, 165, 250, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    animation: fadeOut 0.8s ease-out forwards;
+}
+
+.cursor.hover {
+    transform: scale(2);
+    background: linear-gradient(45deg, #f472b6, #fbbf24);
+    box-shadow: 0 0 30px rgba(244, 114, 182, 0.7);
+}
+
+.cursor-dot.hover {
+    transform: scale(0);
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+@keyframes explode {
+    to {
+        transform: translate(var(--dx), var(--dy));
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+/* Particles */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Mobile cursor fallback */
+@media (hover: none) and (pointer: coarse) {
+    * {
+        cursor: auto !important;
+    }
+    
+    .cursor,
+    .cursor-dot,
+    .cursor-trail {
+        display: none !important;
+    }
+}
+
+section {
+    animation: none; /* Remove automatic animation, will be controlled by JS */
+}
+
+section:nth-child(even) {
+    animation-delay: 0;
+}
+
+section:nth-child(odd) {
+    animation-delay: 0;
+}
