@@ -496,7 +496,7 @@ document.addEventListener('keydown', function(e) {
             document.body.style.filter = 'none';
         }, 3000);
         
-        console.log('🎉 Easter Egg gefunden! Grüße von Daniel!');
+        window.alert('Ich versuche, deinen Verstand zu befreien, Neo. Aber ich kann dir nur die Tür zeigen. Hindurchgehen musst du alleine. 🧿');
         konamiCode = [];
     }
 });
