@@ -480,10 +480,12 @@ window.addEventListener('load', function() {
 
 // Easter Egg: Konami Code
 let konamiCode = [];
-const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
+const konamiSequence = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown",
+    "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight",
+    "b", "a"]; // ↑↑↓↓←→←→BA
 
 document.addEventListener('keydown', function(e) {
-    konamiCode.push(e.keyCode);
+    konamiCode.push(e.key);
     
     if (konamiCode.length > konamiSequence.length) {
         konamiCode.shift();
@@ -499,4 +501,5 @@ document.addEventListener('keydown', function(e) {
         window.alert('Ich versuche, deinen Verstand zu befreien, Neo. Aber ich kann dir nur die Tür zeigen. Hindurchgehen musst du alleine. 🧿');
         konamiCode = [];
     }
+
 });
