@@ -1,6 +1,6 @@
-// Portfolio JavaScript - Modern Interactions & Effects
 
-// DOM Content Loaded
+
+
 document.addEventListener('DOMContentLoaded', function() {
     initializeCustomCursor();
     initializeScrollEffects();
@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeContactFormInteractions();
 });
 
-// Custom Cursor with Trail Effect
+
 function initializeCustomCursor() {
     // Only initialize on non-touch devices
     if ('ontouchstart' in window) return;
     
-    // Create cursor elements
+    
     const cursor = document.createElement('div');
     cursor.className = 'cursor';
     
@@ -36,16 +36,16 @@ function initializeCustomCursor() {
     const trailArray = [];
     const maxTrails = 15;
     
-    // Track mouse movement
+   
     document.addEventListener('mousemove', function(e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
         
-        // Create trail effect
+        
         createTrail(e.clientX, e.clientY);
     });
     
-    // Create trail particles
+    
     function createTrail(x, y) {
         const trail = document.createElement('div');
         trail.className = 'cursor-trail';
@@ -55,7 +55,7 @@ function initializeCustomCursor() {
         document.body.appendChild(trail);
         trailArray.push(trail);
         
-        // Remove old trails
+    
         if (trailArray.length > maxTrails) {
             const oldTrail = trailArray.shift();
             if (oldTrail && oldTrail.parentNode) {
@@ -63,7 +63,7 @@ function initializeCustomCursor() {
             }
         }
         
-        // Auto remove after animation
+        
         setTimeout(() => {
             if (trail && trail.parentNode) {
                 trail.remove();
@@ -75,9 +75,9 @@ function initializeCustomCursor() {
         }, 800);
     }
     
-    // Smooth cursor movement
+   
     function animateCursor() {
-        // Cursor follows with slight delay
+       
         cursorX += (mouseX - cursorX) * 0.1;
         cursorY += (mouseY - cursorY) * 0.1;
         
@@ -111,7 +111,7 @@ function initializeCustomCursor() {
         });
     });
     
-    // Special effects for different sections
+   
     const sections = document.querySelectorAll('section');
     sections.forEach((section, index) => {
         section.addEventListener('mouseenter', () => {
@@ -124,7 +124,7 @@ function initializeCustomCursor() {
         });
     });
     
-    // Hide cursor when leaving window
+
     document.addEventListener('mouseleave', () => {
         cursor.style.opacity = '0';
         cursorDot.style.opacity = '0';
@@ -136,7 +136,7 @@ function initializeCustomCursor() {
     });
 }
 
-// Hide/Show Header on Scroll
+
 function initializeScrollEffects() {
     const header = document.querySelector('header');
     let lastScrollTop = 0;
@@ -159,11 +159,11 @@ function initializeScrollEffects() {
             }
             
             lastScrollTop = scrollTop;
-        }, 10); // Small delay for smoother performance
+        }, 10); 
     }, { passive: true });
 }
 
-// Intersection Observer for Animations
+
 function initializeIntersectionObserver() {
     const observerOptions = {
         threshold: 0.1,
@@ -176,7 +176,7 @@ function initializeIntersectionObserver() {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
                 
-                // Add staggered animation for list items
+              
                 const listItems = entry.target.querySelectorAll('li');
                 listItems.forEach((item, index) => {
                     setTimeout(() => {
@@ -188,7 +188,7 @@ function initializeIntersectionObserver() {
         });
     }, observerOptions);
 
-    // Observe all sections
+
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         section.style.opacity = '0';
@@ -197,7 +197,7 @@ function initializeIntersectionObserver() {
         observer.observe(section);
     });
 
-    // Observe list items for staggered animation
+
     const listItems = document.querySelectorAll('li');
     listItems.forEach(item => {
         item.style.opacity = '0';
@@ -206,7 +206,7 @@ function initializeIntersectionObserver() {
     });
 }
 
-// Smooth Scrolling for Links
+
 function initializeSmoothScrolling() {
     // Add smooth scrolling to internal links
     const links = document.querySelectorAll('a[href^="#"]');
@@ -230,7 +230,7 @@ function initializeSmoothScrolling() {
     });
 }
 
-// Typing Effect for Header
+
 function initializeTypingEffect() {
     const subtitle = document.querySelector('header p');
     if (!subtitle) return;
@@ -268,13 +268,13 @@ function initializeTypingEffect() {
     }, startDelay);
 }
 
-// Particle Background Effect
+
 function initializeParticleBackground() {
     const particleContainer = document.createElement('div');
     particleContainer.classList.add('particles');
     document.body.appendChild(particleContainer);
     
-    // Create floating particles
+
     for (let i = 0; i < 50; i++) {
         createParticle(particleContainer);
     }
@@ -303,7 +303,7 @@ function createParticle(container) {
     
     container.appendChild(particle);
     
-    // Remove and recreate particle after animation
+  
     setTimeout(() => {
         if (particle.parentNode) {
             particle.remove();
@@ -312,7 +312,7 @@ function createParticle(container) {
     }, (Math.random() * 20 + 10) * 1000);
 }
 
-// Enhanced Contact Interactions
+
 function initializeContactFormInteractions() {
     const contactLinks = document.querySelectorAll('#contact a');
     
@@ -321,7 +321,7 @@ function initializeContactFormInteractions() {
             this.style.transform = 'scale(1.05) translateY(-2px)';
             this.style.textShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
             
-            // Special cursor effect for contact links
+            
             const cursor = document.querySelector('.cursor');
             if (cursor) {
                 cursor.style.background = 'linear-gradient(45deg, #34d399, #10b981)';
@@ -342,16 +342,16 @@ function initializeContactFormInteractions() {
         });
         
         link.addEventListener('click', function(e) {
-            // Add ripple effect
+            
             createRippleEffect(e, this);
             
-            // Create cursor explosion effect
+          
             createCursorExplosion(e);
         });
     });
 }
 
-// Cursor explosion effect
+
 function createCursorExplosion(event) {
     const colors = ['#60a5fa', '#a78bfa', '#f472b6', '#fbbf24', '#34d399'];
     
@@ -382,7 +382,7 @@ function createCursorExplosion(event) {
     }
 }
 
-// Ripple Effect
+
 function createRippleEffect(event, element) {
     const ripple = document.createElement('span');
     const rect = element.getBoundingClientRect();
@@ -413,7 +413,7 @@ function createRippleEffect(event, element) {
     }, 600);
 }
 
-// Project Links Enhancement
+
 document.addEventListener('DOMContentLoaded', function() {
     const projectLinks = document.querySelectorAll('#projekte a');
     
@@ -427,7 +427,7 @@ document.addEventListener('DOMContentLoaded', function() {
             link.appendChild(icon);
         }
         
-        // Add hover effect with preview
+     
         link.addEventListener('mouseenter', function() {
             this.style.background = 'rgba(96, 165, 250, 0.1)';
             this.style.padding = '2px 6px';
@@ -441,7 +441,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Performance Optimization
+
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -454,7 +454,7 @@ function debounce(func, wait) {
     };
 }
 
-// Throttle function for scroll events
+
 function throttle(func, limit) {
     let inThrottle;
     return function() {
@@ -468,7 +468,7 @@ function throttle(func, limit) {
     }
 }
 
-// Add loading animation
+
 window.addEventListener('load', function() {
     document.body.style.opacity = '0';
     document.body.style.transition = 'opacity 0.5s ease';
@@ -503,3 +503,4 @@ document.addEventListener('keydown', function(e) {
     }
 
 });
+
