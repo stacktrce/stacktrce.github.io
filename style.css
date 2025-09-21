@@ -4,6 +4,8 @@
     padding: 0;
     box-sizing: border-box;
     cursor: none; /* Hide default cursor */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 
@@ -584,4 +586,5 @@ section:nth-child(even) {
 
 section:nth-child(odd) {
     animation-delay: 0;
+
 }
