@@ -1,114 +1,320 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Welcome to my Profile!👋</title>
-        <link rel="stylesheet" href="style.css">
-        </head>
-        <body>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="color-scheme" content="dark" />
+        <title>Daniel Gieser — Software Enthusiast</title>
+        <meta
+            name="description"
+            content="Daniel Gieser – Frontend- & Backend-Developer bei Siemens Energy, Medieninformatik-Student an der LMU München. Projekte in Angular, Python und Java."
+        />
+        <meta
+            property="og:title"
+            content="Daniel Gieser — Software Enthusiast"
+        />
+        <meta
+            property="og:description"
+            content="Frontend- & Backend-Developer bei Siemens Energy · Medieninformatik @ LMU München"
+        />
+        <meta property="og:type" content="website" />
 
-            <header>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
 
-                <h1>Daniel Gieser | Stacktrce</h1>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-                <p>Medieninformatik-Student</p>
+        <header>
+            <div class="container nav-inner">
+                <a href="#" class="logo">~/stacktrce</a>
 
-            </header>
-            
-            <section id="aboutme">
+                <button
+                    class="nav-toggle"
+                    aria-expanded="false"
+                    aria-controls="nav-links"
+                    aria-label="Menü öffnen"
+                >
+                    <span></span><span></span><span></span>
+                </button>
 
-                <h2>About me👋</h2>
+                <nav id="nav-links" class="nav-links">
+                    <a href="#about" data-nav>Über mich</a>
+                    <a href="#erfahrung" data-nav>Erfahrung</a>
+                    <a href="#projekte" data-nav>Projekte</a>
+                    <a href="#skills" data-nav>Skills</a>
+                    <a href="#kontakt" data-nav>Kontakt</a>
+                </nav>
+            </div>
+        </header>
 
-                <p>
-                    <li>  Medieninformatik-Student an der LMU München. <br> </li>
+        <main id="main">
+            <section class="hero">
+                <div class="container hero-grid">
+                    <div class="hero-text">
+                        <p class="eyebrow">Software Developer · LMU München</p>
+                        <h1>Daniel Gieser</h1>
+                        <p class="hero-role">
+                            Frontend- &amp; Backend-Entwickler
+                            <span class="accent">@ Siemens Energy</span>
+                        </p>
+                        <p class="hero-desc">
+                            Ich baue cloudbasierte Applikationen — auf der
+                            Frontend-Seite mit Angular &amp; RxJS, im Backend
+                            mit C# und AWS Lambda. Nebenbei habe ich mich bereits in
+                            Open-Source-Projekten , u.a rund um Machine Learning eingebracht.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#kontakt" class="btn btn-primary"
+                                >Kontakt aufnehmen</a
+                            >
+                            <a
+                                href="https://github.com/stacktrce/"
+                                target="_blank"
+                                rel="noopener"
+                                class="btn btn-ghost"
+                                >GitHub ↗</a
+                            >
+                        </div>
+                    </div>
 
-                    <li>Interessiert an Softwareentwicklung, Web-Technologien und Datenanalyse. <br></li>
-                    <li>Immer auf der Suche nach Möglichkeiten, mein Wissen praktisch einzusetzen &
-                        zu erweitern! </li>
-                    
-                </p>
-                
+                    <div class="hero-terminal" aria-hidden="true">
+                        <div class="terminal-bar">
+                            <span class="dot"></span><span class="dot"></span
+                            ><span class="dot"></span>
+                            <span class="terminal-title">zsh</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p><span class="prompt">$</span> whoami</p>
+                            <p class="out">daniel-gieser</p>
+                            <p><span class="prompt">$</span> cat role.txt</p>
+                            <p class="out">
+                                Frontend/Backend Dev @ Siemens Energy<br />Medieninformatik-Student,
+                                LMU München
+                            </p>
+                            <p>
+                                <span class="prompt">$</span>
+                                <span class="cursor-blink">▌</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
-
-            <section id="skills">
-
-                <h2>Kenntnisse</h2>
-
-                <ul>
-
-                    <h3>Programmiersprachen:</h3>
-
-                        <li>
-                            Java, Python , Haskell (Grundlagen)
-                        </li>
-                    <h3>Web:</h3>
-                        <li>
-
-                            HTML, CSS, Angular , Javascript / Typescript
-
-                        </li>    
-
-                    <h3>Tools:</h3>
-                        <li>
-
-                            Git, Linux, Docker , Node.js 
-                        
-                        </li>
-
-
-                </ul>
-
-
-
-
-
+            <section id="about">
+                <div class="container">
+                    <p class="eyebrow mono">// about.md</p>
+                    <h2>Über mich</h2>
+                    <div class="about-content" data-reveal>
+                        <p>
+                            Ich bin Medieninformatik-Student an der LMU München
+                            . Aktuell arbeite ich als Frontend-
+                            (und teils Backend)-Entwickler bei Siemens Energy, wo ich an
+                            einer cloudbasierten Applikation mitbaue — von
+                            Angular-Komponenten bis zu Lambda-Functions.
+                        </p>
+                        <p>
+                            Daneben bringe ich mich gerne in
+                            Open-Source-Projekte ein: Bei
+                            <strong>probly</strong>, einer Python-Bibliothek für
+                            Uncertainty Quantification in Machine Learning, habe
+                            ich unter dem Handle <code>stacktrce</code> über
+                            1.000 Zeilen Code beigetragen.
+                        </p>
+                    </div>
+                </div>
             </section>
-          
+
+            <section id="erfahrung">
+                <div class="container">
+                    <p class="eyebrow mono">// experience.ts</p>
+                    <h2>Erfahrung</h2>
+
+                    <article class="card exp-card" data-reveal>
+                        <div class="exp-head">
+                            <div>
+                                <h3>
+                                    Frontend- &amp; Backend Developer
+                                    <span class="badge badge-open"
+                                        >aktuell</span
+                                    >
+                                </h3>
+                                <p class="exp-meta">
+                                    Siemens Energy · Werkstudent
+                                </p>
+                            </div>
+                        </div>
+                        <ul class="exp-points">
+                            <li>
+                                Entwicklung und Pflege von Frontend-Komponenten
+                                einer cloudbasierten Applikation mit Angular
+                                &amp; RxJS
+                            </li>
+                            <li>
+                                Umsetzung von Backend-Logik in C#, u.&nbsp;a.
+                                als AWS Lambda Functions
+                            </li>
+                            <li>
+                                Eigenständige Umsetzung kompletter Features und von Business Logic in
+                                Feature-Branches — von Anforderung bis Review
+                            </li>
+                            <li>
+                                Performance- und Code-Optimierungen im
+                                bestehenden Frontend
+                            </li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">Angular</span>
+                            <span class="tag">RxJS</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">AWS Lambda</span>
+                            <span class="tag">Git</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
 
             <section id="projekte">
+                <div class="container">
+                    <p class="eyebrow mono">// projects.ts</p>
+                    <h2>Projekte</h2>
 
+                    <div class="project-grid">
+                        <article class="card project-card featured" data-reveal>
+                            <div class="project-head">
+                                <h3>probly</h3>
+                                <span class="badge badge-merged">merged</span>
+                            </div>
+                            <p class="project-desc">
+                                Open-Source-Python-Bibliothek zur Repräsentation
+                                und Quantifizierung von Unsicherheit in
+                                Machine-Learning-Modellen — entstanden im Rahmen
+                                eines Uni-Projekts an der LMU München. Mit über
+                                1.000 Zeilen Code unter dem Handle
+                                <code>stacktrce</code> beigetragen.
+                            </p>
+                            <div class="project-meta-row">
+                                <span>★ 34</span>
+                                <span>⑂ 14 Forks</span>
+                                <span>MIT License</span>
+                            </div>
+                            <div class="tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">PyTorch</span>
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">Open Source</span>
+                            </div>
+                            <a
+                                href="https://github.com/pwhofman/probly"
+                                target="_blank"
+                                rel="noopener"
+                                class="project-link"
+                                >Repository ansehen ↗</a
+                            >
+                        </article>
 
-                <h2>Projekte</h2>
-
-
-                <li><a href="https://github.com/stacktrce/finance-dashboard">PyFin</a> Webbasiertes Python Analysetool, welches mithilfe der Yahoo! Finance API, Streamlit, Pandas und Plotly Charts zu Aktienkursen darstellt und verschiede Analysefunktionen wie die kumulative Rendite bietet</li>
-                <li><a href="https://github.com/stacktrce/GitAlyze">GitAlyze</a> Ein lightweight AIO Python-Script zur Analyse von GitHub-Repositories über die GitHub REST API.</li>
-                <li><a href="https://github.com/stacktrce/ShuntingYardAlgo-Eval">ShuntingYardAlgo-Eval</a> Eigene Java Implementation des Shunting Yard Algorithmus, welcher durch Stacks und Queues allgemeingültige Rechengesetze beachtet, inkl. Evaluationsfunktion </li>
-
-
-
+                        <article class="card project-card" data-reveal>
+                            <div class="project-head">
+                                <h3>Shunting Yard Algorithm</h3>
+                                <span class="badge badge-standalone"
+                                    >eigenständig</span
+                                >
+                            </div>
+                            <p class="project-desc">
+                                Java-Implementierung des
+                                Shunting-Yard-Algorithmus zur Auswertung
+                                mathematischer Ausdrücke unter Beachtung von
+                                Operatorrangfolge und Klammerung — umgesetzt mit
+                                Stacks und Queues, inklusive eigener
+                                Evaluationsfunktion.
+                            </p>
+                            <div class="tags">
+                                <span class="tag">Java</span>
+                                <span class="tag">Algorithms</span>
+                                <span class="tag">Data Structures</span>
+                            </div>
+                            <a
+                                href="https://github.com/stacktrce/ShuntingYardAlgo-Eval"
+                                target="_blank"
+                                rel="noopener"
+                                class="project-link"
+                                >Repository ansehen ↗</a
+                            >
+                        </article>
+                    </div>
+                </div>
             </section>
 
+            <section id="skills">
+                <div class="container">
+                    <p class="eyebrow mono">// stack.json</p>
+                    <h2>Skills</h2>
 
+                    <pre
+                        class="card stack-json"
+                        data-reveal
+                        aria-label="Technologie-Stack"
+                    ><code><span class="p">{</span>
+  <span class="k">"frontend"</span><span class="p">:</span> [<span class="s">"Angular"</span>, <span class="s">"RxJS"</span>, <span class="s">"TypeScript"</span>, <span class="s">"HTML/CSS"</span>]<span class="p">,</span>
+  <span class="k">"backend_cloud"</span><span class="p">:</span> [<span class="s">"C#"</span>, <span class="s">"AWS Lambda"</span>, <span class="s">"Java"</span>, <span class="s">"Python"</span>]<span class="p">,</span>
+  <span class="k">"tools"</span><span class="p">:</span> [<span class="s">"Git"</span>, <span class="s">"Linux"</span>, <span class="s">"Docker"</span>, <span class="s">"Node.js"</span>, <span class="s">"Haskell (Grundlagen)"</span>]
+<span class="p">}</span></code></pre>
+                </div>
+            </section>
 
-            <section id="contact">
-
-                 <h2>Kontakt</h2>
-                    <p>
-                        📧 <a href="mailto:Daniel.Gieser@campus.lmu.de">Daniel.Gieser@campus.lmu.de</a><br>
-                        💼 <a href="https://www.linkedin.com/in/daniel-gieser-332567367/">LinkedIn</a><br>
-                        🐙 <a href="https://github.com/stacktrce/">GitHub</a>
+            <section id="kontakt">
+                <div class="container">
+                    <p class="eyebrow mono">// contact.sh</p>
+                    <h2>Kontakt</h2>
+                    <p class="contact-intro">
+                        Du hast ein Projekt, eine Frage oder willst dich einfach
+                        vernetzen? Meld dich gerne.
                     </p>
 
-
-
-
+                    <div class="contact-links" data-reveal>
+                        <a
+                            href="mailto:Daniel.Gieser@campus.lmu.de"
+                            class="contact-link"
+                        >
+                            <span class="contact-label">email</span>
+                            Daniel.Gieser@campus.lmu.de
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/daniel-gieser-332567367/"
+                            target="_blank"
+                            rel="noopener"
+                            class="contact-link"
+                        >
+                            <span class="contact-label">linkedin</span>
+                            /in/daniel-gieser
+                        </a>
+                        <a
+                            href="https://github.com/stacktrce/"
+                            target="_blank"
+                            rel="noopener"
+                            class="contact-link"
+                        >
+                            <span class="contact-label">github</span> /stacktrce
+                        </a>
+                    </div>
+                </div>
             </section>
+        </main>
 
-
-         <footer>
-            <p>© 2025 Daniel Gieser – Zuletzt bearbeitet: 24.10.2025</p>
+        <footer>
+            <div class="container footer-inner">
+                <p>© <span id="year"></span> Daniel Gieser</p>
+                <p class="mono footer-eof">// EOF</p>
+            </div>
         </footer>
 
-            <script src="index.js"></script>
-
-        </body>
-
-    </head>
-</html>    
-
-
-
+        <script src="index.js"></script>
+    </body>
+</html>
